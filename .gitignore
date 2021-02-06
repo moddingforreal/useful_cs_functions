@@ -11,6 +11,11 @@
 *.tmp
 *.exe
 *.temp
+project.assets.json
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
+*.csproj.nuget.dgspec.json
+*.deps.json
 Thumbs.db
 ehthumbs.db
 Thumbscache.db
