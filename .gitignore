@@ -7,8 +7,66 @@
 # BlueJ files
 *.ctxt
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Unneeded files #
+*.tmp
+*.exe
+*.temp
+Thumbs.db
+ehthumbs.db
+Thumbscache.db
+Desktop.ini
+UpgradeLog*.XML
+UpgradeLog*.htm
+*.psess
+*.vsp
+*.vspx
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*_i.c
+*_p.c
+*_i.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.log
+*.svclog
+*.scc
+*.suo
+*.user
+*.sln.docstates
+
+# Directories #
+$RECYCLE.BIN/
+_UpgradeReport_Files/
+Backup*/
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/
+
+# Mac files #
+.DS_Store
+
+_NCrunch*
 
 # Package Files #
 *.jar
@@ -19,5 +77,3 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
