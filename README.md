@@ -1,2 +1,2 @@
 # useful_cs_functions
-put functions that may be helpful here, please dont be *too* specific
+put functions that may be helpful/useful to others here
