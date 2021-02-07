@@ -67,6 +67,7 @@ Backup*/
 x64/
 [Bb]in/
 [Oo]bj/
+.vs/
 
 # Mac files #
 .DS_Store
