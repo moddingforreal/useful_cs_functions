@@ -84,29 +84,29 @@ namespace UsefulFunctions
             else
             {
                 throw new Exception("Not a whole number, use roots!");
-            }
-            double NthRootOf(double number, double e)
+            }            
+        }
+        double NthRootOf(double number, double e)
+        {
+            double root = Convert.ToInt32(Math.Pow(number, (1 / e)));
+            return root;
+        }
+        bool IsOdd(double number)
+        {
+            if (IsWholeNumber(number) == false)
             {
-                double root = Convert.ToInt32(Math.Pow(number, (1 / e)));
-                return root;
+                return true;
             }
-            bool IsOdd(double number)
+            double mod_of_two = number % 2;
+
+
+            if (mod_of_two == 0)
             {
-                if (IsWholeNumber(number) == false)
-                {
-                    return true;
-                }
-                double mod_of_two = number % 2;
-                
-                
-                if (mod_of_two == 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }
