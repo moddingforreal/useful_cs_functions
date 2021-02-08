@@ -133,9 +133,10 @@ namespace UsefulFunctions
             Random r = new Random();
             string[] a = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "\"", "§", "$", "%", "&", "/", "(", ")", "=", "?", "²", "³", "{", "[", "]", "}", @"\", "^", "°", "@", "<", ">", "|", ",", ";", ".", ":", "-", "_", "#", "'", "*", "+", "~", "´", "`", "€", "µ", "¥", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
             string b = "";
+            int a_length = a.Length;
             for (int i = 0;i<length;i++)
             {
-                b = b + r.Next(0, a.Length);
+                b = b + r.Next(0, a_length);
             }
             random = b;
             return random;
