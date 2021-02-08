@@ -47,7 +47,7 @@ namespace UsefulFunctions
         int factorial(int number)
         {
             int result = 0;
-            for (int i = 1;i<number;i++)
+            for (int i = 1; i < number; i++)
             {
                 result = number * i;
             }
@@ -65,7 +65,7 @@ namespace UsefulFunctions
             {
                 return 1;
             }
-            else if(exponent_num > 0)
+            else if (exponent_num > 0)
             {
                 for (int i = 0; i <= exponent_num; i++)
                 {
@@ -73,7 +73,7 @@ namespace UsefulFunctions
                 }
                 return result;
             }
-            else if(IsWholeNumber(exponent_num) == true)
+            else if (IsWholeNumber(exponent_num) == true)
             {
                 for (int i = 0; i <= exponent_num; i++)
                 {
@@ -84,7 +84,7 @@ namespace UsefulFunctions
             else
             {
                 throw new Exception("Not a whole number, use roots!");
-            }            
+            }
         }
         double NthRootOf(double number, double e)
         {
@@ -108,6 +108,24 @@ namespace UsefulFunctions
             {
                 return true;
             }
+        }
+        string replace_strings(string[] replace_strings, string[] strings_to_replace, string original)
+        {
+            string res = "";
+            res = original.Replace(strings_to_replace[0], replace_strings[0]);
+            for (int i = 1; i < original.Length; i++)
+            {
+                res = res.Replace(strings_to_replace[i], replace_strings[i]);
+            }
+            return res;
+        }
+        /*Some just for fun functions*/
+        string owofy(string original)
+        {
+            string[] abca = { "w", "w", "W", "W" };
+            string[] abcb = { "r", "l", "R", "L" };
+            string abc = replace_strings(abca, abcb, original);
+            return abc;
         }
     }
 }
