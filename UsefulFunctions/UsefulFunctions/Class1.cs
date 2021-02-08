@@ -67,7 +67,7 @@ namespace UsefulFunctions
             }
             else if (exponent_num > 0)
             {
-                for (int i = 0; i <= exponent_num; i++)
+                for (int i = 0; i <= exponent_num; i--)
                 {
                     base_num = base_num / base_num;
                 }
