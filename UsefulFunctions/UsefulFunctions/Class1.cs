@@ -71,6 +71,7 @@ namespace UsefulFunctions
                 {
                     base_num = base_num / base_num;
                 }
+                result = base_num;
                 return result;
             }
             else if (IsWholeNumber(exponent_num) == true)
@@ -79,6 +80,7 @@ namespace UsefulFunctions
                 {
                     base_num = base_num * base_num;
                 }
+                result = base_num;
                 return result;
             }
             else
