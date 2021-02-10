@@ -58,9 +58,9 @@ namespace UsefulFunctions
             bool isInt = number == (int)number;
             return isInt;
         }
-        int power_of(int base_num, int exponent_num)
+        double power_of(double base_num, double exponent_num)
         {
-            int result = 0;
+            double result = 0;
             if (exponent_num == 0)
             {
                 return 1;
@@ -121,6 +121,118 @@ namespace UsefulFunctions
             }
             return res;
         }
+
+        /*Some technical functions*/
+        string path_of_exe()
+        {
+            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            return path;
+        }
+        string PathOfExeWithPath()
+        {
+            string path = System.Reflection.Assembly.GetEntryAssembly().Location;
+            return path;
+        }
+        void register_cmd_command(string file_with_path, string filename)
+        {
+            System.IO.File.Move(file_with_path, @"C:\Windows\System32\" + filename);
+        }
+        double area_of_circle(double radius_or_diameter, bool is_diameter)
+        {
+            double pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679;
+            double rad = 0;
+            if (is_diameter)
+            {
+                rad = radius_or_diameter / 2;
+            }
+            else
+            {
+                rad = radius_or_diameter;
+            }
+            //this returns it as in "square original_length_unit" for example: 2 meters squared
+            double area = pi * rad;
+            return area;
+        }
+        void change_console_encoding(string encoding, bool change_input_enc, bool change_output_enc)
+        {
+            if (change_input_enc & change_output_enc)
+            {
+                switch (encoding)
+                {
+                    default:
+                        throw new Exception("Not a supported format!");
+                    case "Ascii":
+                        Console.OutputEncoding = System.Text.Encoding.ASCII;
+                        Console.InputEncoding = System.Text.Encoding.ASCII;
+                        break;
+                    case "utf-8":
+                        Console.OutputEncoding = System.Text.Encoding.UTF8;
+                        Console.InputEncoding = System.Text.Encoding.UTF8;
+                        break;
+                    case "utf-7":
+                        Console.OutputEncoding = System.Text.Encoding.UTF7;
+                        Console.InputEncoding = System.Text.Encoding.UTF7;
+                        break;
+                    case "utf-32":
+                        //this is currently not supported by consoles, but maybe in the future
+                        Console.OutputEncoding = System.Text.Encoding.UTF32;
+                        Console.InputEncoding = System.Text.Encoding.UTF32;
+                        break;
+                }
+            }
+            else if (change_input_enc)
+            {
+                switch (encoding)
+                {
+                    default:
+                        throw new Exception("Not a supported format!");
+                    case "Ascii":
+                        Console.InputEncoding = System.Text.Encoding.ASCII;
+                        break;
+                    case "utf-8":
+                        Console.InputEncoding = System.Text.Encoding.UTF8;
+                        break;
+                    case "utf-7":
+                        Console.InputEncoding = System.Text.Encoding.UTF7;
+                        break;
+                    case "utf-32":
+                        //this is currently not supported by consoles, but maybe in the future
+                        Console.InputEncoding = System.Text.Encoding.UTF32;
+                        break;
+                }
+            }
+            else if (change_output_enc)
+            {
+                switch (encoding)
+                {
+                    default:
+                        throw new Exception("Not a supported format!");
+                    case "Ascii":
+                        Console.OutputEncoding = System.Text.Encoding.ASCII;
+                        Console.InputEncoding = System.Text.Encoding.ASCII;
+                        break;
+                    case "utf-8":
+                        Console.OutputEncoding = System.Text.Encoding.UTF8;
+                        Console.InputEncoding = System.Text.Encoding.UTF8;
+                        break;
+                    case "utf-7":
+                        Console.OutputEncoding = System.Text.Encoding.UTF7;
+                        Console.InputEncoding = System.Text.Encoding.UTF7;
+                        break;
+                    case "utf-32":
+                        //this is currently not supported by consoles, but maybe in the future
+                        Console.OutputEncoding = System.Text.Encoding.UTF32;
+                        Console.InputEncoding = System.Text.Encoding.UTF32;
+                        break;
+                }
+            }
+            else
+            {
+                throw new Exception("Something went wrong!");
+            }
+
+        }
+
         /*Some just for fun functions*/
         string owofy(string original)
         {
