@@ -19,6 +19,10 @@ namespace UsefulFunctions
             string printtext = "";
             for (int i = 0; i <= text.Length; i++)
             {
+                if (i == 0)
+                {
+                    Console.Write("");
+                }
                 printtext = printtext.Substring(i - 1, i);
                 Console.Write(printtext);
                 Thread.Sleep(duration_milliseconds);
