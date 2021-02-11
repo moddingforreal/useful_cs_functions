@@ -3,9 +3,9 @@ using System.Threading;
 
 namespace UsefulFunctions
 {
-    public class Functions
+    public static class Functions
     {
-        void slowwrite(string text, int duration_milliseconds)
+        static void slowwrite(string text, int duration_milliseconds)
         {
             for (int i = 0; i <= text.Length; i++)
             {
@@ -14,7 +14,7 @@ namespace UsefulFunctions
                 Thread.Sleep(duration_milliseconds);
             }
         }
-        void old_slowwrite(string text, int duration_milliseconds)
+        static void old_slowwrite(string text, int duration_milliseconds)
         {
             string printtext = "";
             for (int i = 0; i <= text.Length; i++)
@@ -24,7 +24,7 @@ namespace UsefulFunctions
                 Thread.Sleep(duration_milliseconds);
             }
         }
-        void cycle_rand_textcolor(int wait_time_millisecs)
+        static void cycle_rand_textcolor(int wait_time_millisecs)
         {
             Random r = new Random();
             ConsoleColor[] consoleColors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
@@ -34,7 +34,7 @@ namespace UsefulFunctions
                 Thread.Sleep(wait_time_millisecs);
             }
         }
-        void cycle_rand_backgroundcolor(int wait_time_millisecs)
+        static void cycle_rand_backgroundcolor(int wait_time_millisecs)
         {
             Random r = new Random();
             ConsoleColor[] consoleColors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
@@ -44,7 +44,7 @@ namespace UsefulFunctions
                 Thread.Sleep(wait_time_millisecs);
             }
         }
-        int factorial(int number)
+        static int factorial(int number)
         {
             int result = 0;
             for (int i = 1; i < number; i++)
@@ -53,12 +53,12 @@ namespace UsefulFunctions
             }
             return result;
         }
-        bool IsWholeNumber(double number)
+        static bool IsWholeNumber(double number)
         {
             bool isInt = number == (int)number;
             return isInt;
         }
-        double power_of(double base_num, double exponent_num)
+        static double power_of(double base_num, double exponent_num)
         {
             double result = 0;
             if (exponent_num == 0)
@@ -88,12 +88,12 @@ namespace UsefulFunctions
                 throw new Exception("Not a whole number, use roots!");
             }
         }
-        double NthRootOf(double number, double e)
+        static double NthRootOf(double number, double e)
         {
             double root = Convert.ToInt32(Math.Pow(number, (1 / e)));
             return root;
         }
-        bool IsOdd(double number)
+        static bool IsOdd(double number)
         {
             if (IsWholeNumber(number) == false)
             {
@@ -111,7 +111,7 @@ namespace UsefulFunctions
                 return true;
             }
         }
-        string replace_strings(string[] replace_strings, string[] strings_to_replace, string original)
+        static string replace_strings(string[] replace_strings, string[] strings_to_replace, string original)
         {
             string res = "";
             res = original.Replace(strings_to_replace[0], replace_strings[0]);
@@ -123,17 +123,17 @@ namespace UsefulFunctions
         }
 
         /*Some technical functions*/
-        string path_of_exe()
+        static string path_of_exe()
         {
             string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
             return path;
         }
-        string PathOfExeWithPath()
+        static string PathOfExeWithPath()
         {
             string path = System.Reflection.Assembly.GetEntryAssembly().Location;
             return path;
         }
-        void create_batch_cmd_command(int mode, string save_path, string filename, string commands)
+        static void create_batch_cmd_command(int mode, string save_path, string filename, string commands)
         {
             switch(mode)
             {
@@ -149,11 +149,11 @@ namespace UsefulFunctions
                     throw new Exception("Not a valid mode!");
             }
         }
-        void register_cmd_command(string file_with_path, string filename)
+        static void register_cmd_command(string file_with_path, string filename)
         {
             System.IO.File.Move(file_with_path, @"C:\Windows\System32\" + filename);
         }
-        double area_of_circle(double radius_or_diameter, bool is_diameter)
+        static double area_of_circle(double radius_or_diameter, bool is_diameter)
         {
             double pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679;
             double rad = 0;
@@ -169,7 +169,7 @@ namespace UsefulFunctions
             double area = pi * rad;
             return area;
         }
-        void change_console_encoding(string encoding, bool change_input_enc, bool change_output_enc)
+        static void change_console_encoding(string encoding, bool change_input_enc, bool change_output_enc)
         {
             if (change_input_enc & change_output_enc)
             {
@@ -250,14 +250,14 @@ namespace UsefulFunctions
         }
 
         /*Some just for fun functions*/
-        string owofy(string original)
+        static string owofy(string original)
         {
             string[] abca = { "w", "w", "W", "W" };
             string[] abcb = { "r", "l", "R", "L" };
             string abc = replace_strings(abca, abcb, original);
             return abc;
         }
-        string random_string(int length)
+        static string random_string(int length)
         {
             string random = "";
             Random r = new Random();
