@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace UsefulFunctions
 {
-    public class Class1
+    public class Functions
     {
         void slowwrite(string text, int duration_milliseconds)
         {
