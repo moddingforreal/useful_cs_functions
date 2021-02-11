@@ -133,6 +133,22 @@ namespace UsefulFunctions
             string path = System.Reflection.Assembly.GetEntryAssembly().Location;
             return path;
         }
+        void create_batch_cmd_command(int mode, string save_path, string filename, string commands)
+        {
+            switch(mode)
+            {
+                case 0:
+                    System.IO.File.Create(save_path);
+                    System.IO.File.WriteAllText(save_path + filename + ".bat", commands);
+                    break;
+                case 1:
+                    System.IO.File.Create(save_path);
+                    System.IO.File.WriteAllText(save_path + filename + ".cmd", commands);
+                    break;
+                default:
+                    throw new Exception("Not a valid mode!");
+            }
+        }
         void register_cmd_command(string file_with_path, string filename)
         {
             System.IO.File.Move(file_with_path, @"C:\Windows\System32\" + filename);
