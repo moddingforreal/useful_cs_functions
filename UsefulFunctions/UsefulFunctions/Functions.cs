@@ -5,6 +5,7 @@ namespace UsefulFunctions
 {
     public class Functions
     {
+        //Text functions
         public void slowwrite(string text, int duration_milliseconds)
         {
             for (int i = 0; i <= text.Length; i++)
